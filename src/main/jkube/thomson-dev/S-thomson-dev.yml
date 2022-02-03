@@ -1,0 +1,12 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  namespace: {{ocp-namespace}}
+  name: thomson-secret-0
+  labels:
+    app: thomson    
+stringData:  
+  actuator.password: {{actuator.password}}
+type: Opaque
+---
+ 

@@ -1,0 +1,11 @@
+apiVersion: triggers.tekton.dev/v1alpha1
+kind: Trigger
+metadata:
+  name: thomson-dev-trigger
+  namespace: thomson-dev
+spec:
+  serviceAccountName: pipeline
+  bindings:
+    - ref: thomson-dev-triggerbinding
+  template:
+    ref: thomson-dev-triggertemplate

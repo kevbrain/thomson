@@ -1,0 +1,18 @@
+kind: Route
+apiVersion: route.openshift.io/v1
+metadata:
+  namespace: {{ocp-namespace}}
+  name: thomson-route
+  labels:
+    app: thomson
+spec:
+  to:
+    kind: Service
+    name: thomson-service
+    weight: 256
+  port:
+    targetPort: 8080
+  tls:
+    termination: edge
+  wildcardPolicy: None
+---
